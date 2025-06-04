@@ -64,8 +64,8 @@ ctx.arc(x, y, 2, 0, Math.PI * 2); // ← Change the radius (2)
 
 ## 🌟 Try It Live!
 
-[![Open in CodePen](https://img.shields.io/badge/CodePen-000000?style=for-the-badge&logo=codepen&logoColor=white)](https://codepen.io/your-pen-link)
-[![Open in JSFiddle](https://img.shields.io/badge/JSFiddle-0084FF?style=for-the-badge&logo=jsfiddle&logoColor=white)](https://jsfiddle.net/your-fiddle-link)
+[![Open in CodePen](https://img.shields.io/badge/CodePen-000000?style=for-the-badge&logo=codepen&logoColor=white)](https://codepen.io)
+[![Open in JSFiddle](https://img.shields.io/badge/JSFiddle-0084FF?style=for-the-badge&logo=jsfiddle&logoColor=white)](https://jsfiddle.net/)
 
 ## 📜 License
 
