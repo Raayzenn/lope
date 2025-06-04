@@ -1,5 +1,5 @@
-```markdown
-# ❤️ Heart Drawing Animation ❤️
+
+# Love draw - alay
 
 A beautiful heart drawing animation created using
 HTML5 Canvas and JavaScript. This project
