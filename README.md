@@ -6,8 +6,7 @@ HTML5 Canvas and JavaScript. This project
 demonstrates how to generate and animate heart-shaped
 points using mathematical equations.
 
-[! Live demo ]
-(https://lovedraw.vercel.app/)
+[! Live demo ](https://lovedraw.vercel.app/)
 
 ## ✨ Features
 
