@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Drawing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-pink-50 flex flex-col items-center justify-center min-h-screen p-4">
+    <canvas id="heartCanvas" width="400" height="400" class="bg-transparent"></canvas>
+    <h1 class="text-pink-600 text-3xl mt-8 font-bold animate-[fadeIn_3s_ease-in]">
+        Do you want to be my girlfriend?
+    </h1>
+
+    <script>
+        // Generate heart points
+        function generateHeartPoints() {
+            const points = [];
+            for (let t = 0; t < 360; t += 1) {
+                const angle = (t * Math.PI) / 180;
+                const x = 16 * Math.pow(Math.sin(angle), 3);
+                const y = 13 * Math.cos(angle) - 
+                         5 * Math.cos(2 * angle) - 
+                         2 * Math.cos(3 * angle) - 
+                         Math.cos(4 * angle);
+                points.push({ x, y: -y }); // Invert y
+            }
+            return points;
+        }
+
+        // Draw heart animation
+        function drawHeart() {
+            const canvas = document.getElementById('heartCanvas');
+            const ctx = canvas.getContext('2d');
+            const points = generateHeartPoints();
+            const scale = 10;
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+
+            let i = 0;
+            function drawNextPoint() {
+                if (i < points.length) {
+                    const p = points[i];
+                    ctx.fillStyle = '#ec4899'; // Pink-500
+                    ctx.beginPath();
+                    ctx.arc(centerX + p.x * scale, centerY + p.y * scale, 2, 0, Math.PI * 2);
+                    ctx.fill();
+                    i++;
+                    requestAnimationFrame(drawNextPoint);
+                }
+            }
+            drawNextPoint();
+        }
+
+        // Start animation when page loads
+        window.onload = drawHeart;
+    </script>
+</body>
+</html>
